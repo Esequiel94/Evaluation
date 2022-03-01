@@ -12,7 +12,7 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     @GET("breweries")
-    Call<List<ApiData>>obtenerListado(@Query("limit") int limit, @Query("offset") int offset );
+    Call<List<ApiData>>obtenerListado(@Query("page") int page, @Query("per_page") int limit );
 
 
 }

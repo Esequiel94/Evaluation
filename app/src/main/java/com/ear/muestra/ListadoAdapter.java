@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,16 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ear.muestra.models.ApiData;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHolder> {
+public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHolder> implements Filterable {
 
     private ArrayList<ApiData> dataSet;
+    private ArrayList<ApiData> dataSetListNew;
     private Context context;
 
     public ListadoAdapter(Context context, List<ApiData> dataSet) {
         this.context=context;
         this.dataSet= (ArrayList<ApiData>) dataSet;
+
+        dataSetListNew = new ArrayList<>(dataSet);
     }
 
     @Override
@@ -76,6 +82,60 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
         return dataSet.size();
     }
 
+
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
+    public void setFilterList(ArrayList<ApiData>filterList){
+
+        dataSet=filterList;
+        notifyDataSetChanged();
+
+    }
+
+    /*private Filter filterList = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<ApiData> filteredList = new ArrayList<>();
+
+            if (charSequence==null || charSequence.length()==0){
+
+                filteredList.addAll(dataSetListNew);
+
+            }else{
+                String filter = charSequence.toString().toLowerCase().trim();
+
+                for (ApiData item:dataSetListNew) {
+
+                    if (item.getName().toLowerCase().contains(filter)){
+
+                        dataSet.add(item);
+
+                    }
+
+                }
+            }
+
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+            dataSet.clear();
+            dataSet.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };*/
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView nombreTextView;
@@ -86,4 +146,6 @@ public class ListadoAdapter extends RecyclerView.Adapter<ListadoAdapter.ViewHold
             nombreTextView = (TextView) itemView.findViewById(R.id.nombre);
         }
     }
+
+
 }
