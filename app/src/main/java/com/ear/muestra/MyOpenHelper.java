@@ -3,6 +3,7 @@ package com.ear.muestra;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -15,7 +16,8 @@ import java.util.ArrayList;
  */
 public class MyOpenHelper extends SQLiteOpenHelper {
 
-    private static final String DATA_TABLE_CREATE = "CREATE TABLE dates( _id INTEGER PRIMARY KEY AUTOINCREMENT, id TEXT, " +
+    private static final String DATA_TABLE_CREATE = "CREATE TABLE dates( _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "id TEXT unique, " +
             "name TEXT, brewery_type TEXT,street TEXT,address_2 TEXT,address_3 TEXT," +
             "city TEXT,state TEXT,county_province TEXT,postal_code TEXT,country TEXT," +
             "longitude TEXT,latitude TEXT,phone TEXT,website_url TEXT,updated_at TEXT," +
@@ -37,7 +39,17 @@ public class MyOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        try {
+            db.execSQL("drop table if exists " + DB_NAME);
+
+        }catch (SQLException e){
+
+        }
+
+        onCreate(db);
     }
+
+
 
     public void insertar(String id,String name,String brewery_type,String street,String address_2,
                          String address_3,String city,String state,String county_province,
@@ -64,6 +76,7 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         cv.put("created_at", created_at);
 
         db.insert("dates", null, cv);
+
 
     }
 

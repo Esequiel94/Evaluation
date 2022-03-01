@@ -1,391 +1,451 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+
     tools:context=".DetallesActivity">
 
-    <TextView
-        android:id="@+id/Brewery_name"
-        android:layout_width="363dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="390dp"
-        android:layout_height="520dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Brewery_name"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <TableRow
-            android:id="@+id/Cabecera"
+        <TextView
+            android:id="@+id/Brewery_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="AAA"
+            android:textAllCaps="true"
+            android:textSize="15dp"
+            tools:ignore="MissingConstraints">
 
-            <TextView
-                android:id="@+id/ColumnaAnio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5px"
-                android:text="Detalles"
-                android:textColor="#005500"
-                android:textSize="26sp" />
+        </TextView>
 
+    </androidx.cardview.widget.CardView>
 
-        </TableRow>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        tools:ignore="MissingConstraints">
 
-        <TableRow
-            android:id="@+id/SeparadorCabecera"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical|horizontal"
+            android:scrollbarStyle="outsideInset"
+            android:fillViewport="true"
+            >
 
-            <FrameLayout
-                android:id="@+id/LineaCabecera"
-                android:layout_width="fill_parent"
-                android:layout_height="2px"
-                android:layout_span="6"
-                android:background="#FFFFFF">
-
-            </FrameLayout>
-        </TableRow>
-
-
-        <TableRow
-            android:id="@+id/Fila_brewery_type"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_brewery_type"
+            <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="brewery_type"
-                android:textSize="16sp" />
+                android:scrollbars="vertical|horizontal"
+                >
 
-            <TextView
-                android:id="@+id/Brewery_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="AAA"
-                android:textSize="14sp" />
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
 
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
 
-        </TableRow>
+                    tools:ignore="MissingConstraints">
 
-        <TableRow
-            android:id="@+id/Fila_street"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+                    <TableRow
+                        android:id="@+id/Cabecera"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/_street"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="street"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_street"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_address_2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_address_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="address_2"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_address_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="16sp" />
+                        <TextView
+                            android:id="@+id/ColumnaAnio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5px"
+                            android:text="@string/details"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="26sp" />
 
 
-        </TableRow>
+                    </TableRow>
 
-        <TableRow
-            android:id="@+id/Fila_address_3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+                    <TableRow
+                        android:id="@+id/SeparadorCabecera"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
 
-            <TextView
-                android:id="@+id/_address_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="address_3"
-                android:textSize="16sp" />
+                        >
 
-            <TextView
-                android:id="@+id/Brewery_address_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
+                        <FrameLayout
+                            android:id="@+id/LineaCabecera"
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_span="6"
+                            android:background="@color/colorPrimary">
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_city"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="city"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_state"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="state"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_county_province"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_county_province"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="county_province"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_county_province"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_postal_code"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_postal_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="postal_code"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_postal_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_country"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_country"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="country"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_country"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_longitude"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_longitude"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="longitude"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_longitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_latitude"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_latitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="latitude"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_latitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_phone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="phone"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_website_url"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_website_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="website_url"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_website_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_updated_at"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_updated_at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="updated_at"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_updated_at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/Fila_created_at"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/_created_at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="created_at"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/Brewery_created_at"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp" />
-
-        </TableRow>
+                        </FrameLayout>
+                    </TableRow>
 
 
-    </TableLayout>
+                    <TableRow
+                        android:id="@+id/Fila_brewery_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_brewery_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/brewery_type"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="AAA"
+                            android:textSize="14sp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_street"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_street"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/street"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_street"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_address_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_address_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/address_2"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_address_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="16sp" />
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_address_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_address_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/address_3"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_address_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/city"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/state"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_county_province"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_county_province"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/county_province"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_county_province"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_postal_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_postal_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/postal_code"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_postal_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/country"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_longitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_longitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/longitude"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_longitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_latitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_latitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/latitude"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_latitude"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phone"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_website_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_website_url"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/website_url"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_website_url"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginRight="15dp"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_updated_at"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_updated_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/updated_at"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_updated_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila_created_at"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/_created_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/created_at"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/Brewery_created_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="14sp" />
+
+                    </TableRow>
+
+
+                </TableLayout>
+
+            </HorizontalScrollView>
+
+
+
+        </ScrollView>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

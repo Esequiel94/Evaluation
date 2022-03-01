@@ -1,3 +1,24 @@
-<resources>
-    <string name="app_name">Muestra</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Do You Like Beer?</string>
+    <string name="action_settings">Search a name</string>
+
+    <string name="details" translatable="false">Details</string>
+
+    <string name="brewery_name" translatable="false" tools:ignore="ExtraTranslation">Name</string>
+    <string name="brewery_type" translatable="false" tools:ignore="ExtraTranslation">Brewery Type</string>
+    <string name="street" translatable="false" tools:ignore="ExtraTranslation">Street</string>
+
+    <string name="address_2" translatable="false" tools:ignore="ExtraTranslation">Address 1</string>
+    <string name="address_3" translatable="false" tools:ignore="ExtraTranslation">Address 2</string>
+    <string name="city" translatable="false" tools:ignore="ExtraTranslation">City</string>
+    <string name="state" translatable="false" tools:ignore="ExtraTranslation">State</string>
+    <string name="county_province" translatable="false" tools:ignore="ExtraTranslation">County Province</string>
+    <string name="postal_code" translatable="false" tools:ignore="ExtraTranslation">Postal Code</string>
+    <string name="country" translatable="false" tools:ignore="ExtraTranslation">Country</string>
+    <string name="longitude" translatable="false" tools:ignore="ExtraTranslation">Longitude</string>
+    <string name="latitude" translatable="false" tools:ignore="ExtraTranslation">Latitude</string>
+    <string name="phone" translatable="false" tools:ignore="ExtraTranslation">Phone</string>
+    <string name="website_url" translatable="false" tools:ignore="ExtraTranslation">Website Url</string>
+    <string name="updated_at" translatable="false" tools:ignore="ExtraTranslation">Updated At</string>
+    <string name="created_at" translatable="false" tools:ignore="ExtraTranslation">Created At</string>
 </resources>
